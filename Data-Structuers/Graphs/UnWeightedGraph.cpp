@@ -4,6 +4,19 @@
 
 using namespace std;
 
+/*----------------------------------- Debugging in Error.txt ----------------------------------------------- */
+
+#define bts(jimin) cerr << #jimin << " -> "; loveYourself(jimin); cerr << "\n";
+void loveYourself(int jimin)    { cerr << jimin; }
+template <class T> void loveYourself(vector <T> v) { 
+    cerr << " [ ";
+    for (T suga : v) {
+        loveYourself(suga);
+        cerr << " ";
+    }
+    cerr << "]";
+}
+
 int vertices, edges;
 vector<vector<int>> graph(10);
 vector<int> bfsVisited(10);
@@ -44,8 +57,9 @@ void breadthFirstSearch(int current) {
 
 int main() {
 
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("../input.txt", "r", stdin);
+    freopen("../output.txt", "w", stdout);
+    freopen("../error.txt", "w", stderr);
 
     cin >> vertices >> edges;
 
@@ -57,6 +71,7 @@ int main() {
     }
     
     breadthFirstSearch(0);
+    bts(bfs);
     
     cout << "Breadth First Search\n";
     for (auto x : bfs) 
@@ -64,6 +79,8 @@ int main() {
     cout << "\n";
     
     depthFirstSearch(0);
+    
+    bts(dfs);
 
     cout << "Depth First Search\n";
     for (auto y : dfs)
@@ -71,4 +88,3 @@ int main() {
     cout << "\n";
 
 }
-
