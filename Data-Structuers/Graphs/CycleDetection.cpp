@@ -44,4 +44,10 @@ int main() {
         graph[x].emplace_back(y);
         graph[y].emplace_back(x);
     }
+    
+    if (hasCycle(0, -1)) {
+        cout << "It is a Cyclic Graph\n";
+    }
+    else 
+        cout << "It is a Acyclic Graph\n";
 }

@@ -68,9 +68,9 @@ int steppingLadder(int level) {
 
 int main() {
 
-    freopen("../input.txt", "r", stdin);
-    freopen("../output.txt", "w", stdout);
-    freopen("../error.txt", "w", stderr);
+    freopen("../../input.txt", "r", stdin);
+    freopen("../../output.txt", "w", stdout);
+    freopen("../../error.txt", "w", stderr);
     
     cin >> n;
     
@@ -80,4 +80,5 @@ int main() {
     cout << n << "\n";
     cout << usingDP(1) << "\n";
     
+    bts(dp);
 }
